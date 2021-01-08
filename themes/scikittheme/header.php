@@ -10,26 +10,24 @@
   
   <title>scikit-learn: machine learning in Python &mdash; scikit-learn 0.23.2 documentation</title>
   
-  <link rel="canonical" href="https://scikit-learn.org/stable/index.html" />
+  <!-- <link rel="canonical" href="https://scikit-learn.org/stable/index.html" /> -->
+  <link rel="canonical" href="<?php echo home_url();?>" />
 
   
   <link rel="shortcut icon" href="https://scikit-learn.org/stable/_static/favicon.ico"/>
   
-  <!-- <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/css/vendor/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/gallery-binder.css" type="text/css" />
-  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/gallery-dataframe.css" type="text/css" />
-  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/css/theme.css" type="text/css" /> -->
-
   <?php wp_head() ?>
 <!-- <script id="documentation_options" data-url_root="./" src="https://scikit-learn.org/stable/_static/documentation_options.js"></script>
 <script src="https://scikit-learn.org/stable/_static/jquery.js"></script>  -->
 </head>
 <body>
 
+
+
+
 <nav id="navbar" class="sk-landing-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-landing-container px-0">
-      <a class="navbar-brand py-0" href="#">
+      <a class="navbar-brand py-0" href="<?php echo home_url();?>">
         <img
           class="sk-brand-img"
           src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"
@@ -49,7 +47,29 @@
     </button>
 
     <div class="sk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+    <?php 
+      wp_nav_menu( [
+          'theme_location'  => 'primary',
+           'menu'            => 'Primary Menu', 
+           'container'       => 'ul', 
+           //'container_class' => '1111', 
+           //'container_id'    => '2222',
+           'menu_class'      => 'navbar-nav mr-auto', 
+           //'menu_id'         => '111',
+          // 'echo'            => true,
+          // 'fallback_cb'     => 'wp_page_menu',
+          // 'before'          => '',
+          // 'after'           => '',
+          // 'link_before'     => '',
+          // 'link_after'      => '',
+          // 'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+          // 'depth'           => 0,
+          // 'walker'          => '',
+        ] );
+    
+    ?>
+
+      <!-- <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="sk-nav-link nav-link" href="install.html">Install</a>
         </li>
@@ -111,7 +131,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="https://scikit-learn.org/dev/versions.html">Other Versions</a>
           </div>
         </li>
-      </ul>
+      </ul> -->
       <div id="searchbox" role="search">
           <div class="searchformwrapper">
           <form class="search" action="search.html" method="get">
