@@ -15,15 +15,18 @@
   
   <link rel="shortcut icon" href="https://scikit-learn.org/stable/_static/favicon.ico"/>
   
-  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/css/vendor/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/gallery-dataframe.css" type="text/css" />
-  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/css/theme.css" type="text/css" />
-<script id="documentation_options" data-url_root="./" src="https://scikit-learn.org/stable/_static/documentation_options.js"></script>
-<script src="https://scikit-learn.org/stable/_static/jquery.js"></script> 
+  <link rel="stylesheet" href="https://scikit-learn.org/stable/_static/css/theme.css" type="text/css" /> -->
+
+  <?php wp_head() ?>
+<!-- <script id="documentation_options" data-url_root="./" src="https://scikit-learn.org/stable/_static/documentation_options.js"></script>
+<script src="https://scikit-learn.org/stable/_static/jquery.js"></script>  -->
 </head>
 <body>
+
 <nav id="navbar" class="sk-landing-navbar navbar navbar-expand-md navbar-light bg-light py-0">
   <div class="container-fluid sk-landing-container px-0">
       <a class="navbar-brand py-0" href="#">

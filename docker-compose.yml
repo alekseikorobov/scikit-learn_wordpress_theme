@@ -18,7 +18,10 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
-      WORDPRESS_DB_NAME: exampledb 
+      WORDPRESS_DB_NAME: exampledb
+      # WP_DEBUG=true
+      # WP_DEBUG_DISPLAY=false
+      # WP_DEBUG_LOG=true 
     volumes:
       # - ./:/var/www/html/wp-content
       #- ${WP_CORE}:/var/www/html

@@ -23,15 +23,17 @@
   </div>
 </div> -->
 
-<script src="_static/js/vendor/bootstrap.min.js"></script>
+<?php wp_footer() ?>
 
-<script>
+<!-- <script src="https://scikit-learn.org/stable/_static/js/vendor/bootstrap.min.js"></script> -->
+
+<!-- <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', 'UA-22606712-2', 'auto');
     ga('set', 'anonymizeIp', true);
     ga('send', 'pageview');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script> -->
 
 
 <script>
@@ -96,6 +98,6 @@ $(document).ready(function() {
 });
 
 </script>
-    <script src="https://scikit-learn.org/versionwarning.js"></script>
+    <!-- <script src="https://scikit-learn.org/versionwarning.js"></script> -->
 </body>
 </html>
