@@ -1,6 +1,8 @@
 <?php
     require get_template_directory() . '/views/view1.php';
 
+    require get_template_directory() . '/widgets/widgets_init.php';
+
     /*init actions and filters*/
     add_action ('init','register_post_types');
     add_action( 'init', 'register_taxonomies' );
@@ -188,5 +190,6 @@
             // 'before_sidebar' => '', // WP 5.6
             // 'after_sidebar'  => '', // WP 5.6
         ) );
-        
+
+        register_widget( 'Category_and_Post_Title_View__Widget' );        
     }
