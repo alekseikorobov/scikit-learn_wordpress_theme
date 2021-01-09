@@ -2,3 +2,7 @@
 Theme Name: scikittheme
 */
 
+/*https://oddstyle.ru/wordpress-2/stati-wordpress/kak-spravitsya-s-pustymi-elementami-v-wordpress.html*/
+p:empty {
+    display: none !important;
+}

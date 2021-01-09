@@ -8,7 +8,21 @@
     add_filter( 'nav_menu_css_class', 'filter_add_my_class_to_nav_menu', 10, 2 );
     add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 1 );    
     add_action( 'widgets_init', 'register_my_widgets' );
+    add_action( 'pre_get_posts', 'wpse10691_alter_query' ); //сортировка постов перед выводом
+    add_filter('widget_title', 'widgettitle_off');  //фильтр для того чтобы убрать заголовок из виджета
 
+    /*http://wordsmall.ru/sajtostroenie/kak-ubrat-lishnie-tegi-br-i-p-v-wordpress.html*/
+    remove_filter( 'the_content', 'wpautop' );// для контента
+    remove_filter( 'the_excerpt', 'wpautop' );// для анонсов
+    remove_filter( 'comment_text', 'wpautop' );// для комментарий
+
+    function widgettitle_off( $title ) {
+        if (empty($title)) return '';
+        if ($title[0] == '!') return '';
+        return $title;
+    }
+        
+    
     /*
         сортировка постов перед выводом
         https://wordpress.stackexchange.com/questions/49940/how-to-order-posts-by-modified-date-without-using-query-posts
@@ -21,8 +35,6 @@
             $query->set( 'order', 'asc' );
         //}
     }
-    add_action( 'pre_get_posts', 'wpse10691_alter_query' );
-
 
     function theme_register_nav_menu() {
         register_nav_menu( 'primary', 'Primary Menu' );

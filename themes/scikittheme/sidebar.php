@@ -26,17 +26,18 @@
                         <string>cite us</string>
                     </a> if you use the software.
                 </p>
-            </div>
+            </div>     
 
             <?php
                 if ( function_exists('dynamic_sidebar') )
-                        dynamic_sidebar('sk-sidebar-toc');
+                    dynamic_sidebar('sk-sidebar-toc');                
                 /*
+                    Нужно создать собственный виджет, который будет перечислять категории и все страницы в ней
                 Должны выводить список постов из определенной категории, как это сделать можно посмотреть тут
                 https://youtu.be/gIDId7lej80?list=PL3LQJkGQtzc6Nwz67GGrMdqxim1c0H5DC&t=1589
                 пока возникает вопрос, как выводить для определенной страницы свою категорию
                 */
-                 
+
             ?>
 
             <!-- <div class="sk-sidebar-toc">

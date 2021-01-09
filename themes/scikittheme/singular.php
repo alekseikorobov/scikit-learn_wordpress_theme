@@ -13,7 +13,7 @@ get_header();
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle
         Menu</label>
     
-        <?php  get_sidebar(); ?>
+        <?php  get_sidebar('post'); ?>
 
         
         
