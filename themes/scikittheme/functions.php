@@ -9,9 +9,25 @@
     add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 1 );    
     add_action( 'widgets_init', 'register_my_widgets' );
 
+    /*
+        сортировка постов перед выводом
+        https://wordpress.stackexchange.com/questions/49940/how-to-order-posts-by-modified-date-without-using-query-posts
+    */
+    function wpse10691_alter_query( $query )
+    {
+        //if ( $query->is_main_query() && ( $query->is_home() || $query->is_search() || $query->is_archive() )  )
+        //{
+            $query->set( 'orderby', 'create' );
+            $query->set( 'order', 'asc' );
+        //}
+    }
+    add_action( 'pre_get_posts', 'wpse10691_alter_query' );
+
 
     function theme_register_nav_menu() {
         register_nav_menu( 'primary', 'Primary Menu' );
+        add_post_type_support( 'page', 'excerpt' );
+        add_post_type_support( 'post', 'post_excerpt' );
     }
 
 
@@ -31,7 +47,7 @@
     function scripts_theme(){
         wp_enqueue_script('documentation_options','https://scikit-learn.org/stable/_static/documentation_options.js');
         wp_enqueue_script('jquery');//,'https://scikit-learn.org/stable/_static/jquery.js');
-        wp_enqueue_script('bootstrap','https://scikit-learn.org/stable/_static/js/vendor/bootstrap.min.js');
+        wp_enqueue_script('bootstrap','https://scikit-learn.org/stable/_static/js/vendor/bootstrap.min.js',['jquery']);
         wp_enqueue_script('versionwarning','https://scikit-learn.org/versionwarning.js');        
     }
 

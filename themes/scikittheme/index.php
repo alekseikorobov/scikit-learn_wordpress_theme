@@ -7,34 +7,6 @@ get_header();
 ?>
 
 
-<?php
-  // Config::define('WP_DEBUG_LOG', true);
-  // if ( WP_DEBUG_LOG ) {
-      //ini_set( 'log_errors', 1 );
-      //ini_set( 'error_log', WP_CONTENT_DIR . '/debug.log' );
-  //}
-  // if ( have_posts() ) {
-    
-  // //   // Load posts loop.
-  //   while ( have_posts() ) {      
-  //     the_post();
-  //     
-  //      //get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-  //   }
-
-  // //   // Previous/next page navigation.
-  // //   twenty_twenty_one_the_posts_navigation();
-
-  // // } else {
-
-  // //   // If no content, include the "No posts found" template.
-  // //   get_template_part( 'template-parts/content/content-none' );
-
-  // }
-?>
-
-
-
 
 
 <div class="container sk-landing-container pt-3 body" role="main">
@@ -42,14 +14,14 @@ get_header();
     <div class="col-md-4 mb-3 px-md-2 sk-px-xl-4">
       <div class="card h-100">
         <div class="card-body">
-          <a href="supervised_learning.html#supervised-learning"><h4 class="sk-card-title card-title">Classification</h4></a>
+          <a href="category/1-supervised-learning"><h4 class="sk-card-title card-title">Classification</h4></a>
           <p class="card-text">Identifying which category an object belongs to.</p>
           <p class="card-text"><strong>Applications:</strong> Spam detection, image recognition.<br>
           <strong>Algorithms:</strong>
           <a href="modules/svm.html#svm-classification">SVM</a>,
           <a href="modules/neighbors.html#classification">nearest neighbors</a>,
           <a href="modules/ensemble.html#forest">random forest</a>,
-          and <a href="supervised_learning.html#supervised-learning">more...</a></p>
+          and <a href="category/1-supervised-learning">more...</a></p>
         </div>
         <div class="overflow-hidden mx-2 text-center flex-fill">
           <a href="auto_examples/classification/plot_classifier_comparison.html" aria-label="Classification">
@@ -62,14 +34,14 @@ get_header();
     <div class="col-md-4 mb-3 px-md-2 sk-px-xl-4">
       <div class="card h-100">
         <div class="card-body">
-          <a href="supervised_learning.html#supervised-learning"><h4 class="sk-card-title card-title">Regression</h4></a>
+          <a href="category/1-supervised-learning"><h4 class="sk-card-title card-title">Regression</h4></a>
           <p class="card-text">Predicting a continuous-valued attribute associated with an object.</p>
           <p class="card-text"><strong>Applications:</strong> Drug response, Stock prices.<br>
           <strong>Algorithms:</strong>
           <a href="modules/svm.html#svm-regression">SVR</a>,
           <a href="modules/linear_model.html#ridge-regression">nearest neighbors</a>,
           <a href="modules/linear_model.html#lasso">random forest</a>,
-          and <a href="supervised_learning.html#supervised-learning">more...</a></p>
+          and <a href="category/1-supervised-learning">more...</a></p>
         </div>
         <div class="overflow-hidden mx-2 text-center flex-fill">
           <a href="auto_examples/ensemble/plot_adaboost_regression.html" aria-label="Regression">
