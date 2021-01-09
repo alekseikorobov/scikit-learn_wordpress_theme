@@ -1,3 +1,11 @@
+<?PHP 
+/*
+Template Name: example
+*/
+
+?>
+
+
 <?php
 get_header();
 
@@ -13,7 +21,7 @@ get_header();
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle
         Menu</label>
     
-        <?php  get_sidebar(); ?>
+        <?php  get_sidebar('example'); ?>
 
 
     <div id="sk-page-content-wrapper">
@@ -61,10 +69,16 @@ get_header();
                 <div class="toctree-wrapper compound">
                     <ul>
                     <?php
-                        if (have_posts()){
-                            while(have_posts()){
-                                the_post();
-                                ?>
+                        $args = array(
+                            'post_type'=>'example',
+                            'suppress_filters'=>true // подавление работы фильтров изменения SQL запросов
+                        );
+                        $posts = get_posts($args);
+
+                        foreach ($posts as $post) {
+                            setup_postdata($post);
+
+                            ?>
                                 <li class="toctree-l1"><a class="reference internal" href="<?php the_permalink();?>">
                                     <!-- 1.1.Linear Models -->
                                     <?php the_title(); ?>
@@ -73,14 +87,13 @@ get_header();
                                     </ul>
                                 </a>
 
-                            <?php } //end while
-                        }//end if
+                            <?php
+
+                        }
                     ?>                    
                     </ul>
                 </div><!--  END toctree-wrapper compound -->
             </div>
-
-            
         </div>
         <div class="container">
             <footer class="sk-content-footer">
