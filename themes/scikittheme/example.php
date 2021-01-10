@@ -60,11 +60,13 @@ get_header();
             <div class="section" id="supervised-learning">
                 <span id="id1"></span>
                 <h1>
-                    From Category
-                </h1>
-                <h1>
-                <span class="section-number">1. </span>Supervised learning<a class="headerlink"
-                    href="#supervised-learning" title="Permalink to this headline">¶</a>
+                <?php
+                    $post_id = get_the_ID();
+                    $current_tax_name = get_the_terms( $post_id, $taxanomy_name )[0]->name;
+                    echo $current_tax_name;
+                ?>
+                <!-- <span class="section-number">1. </span>Supervised learning<a class="headerlink"
+                    href="#supervised-learning" title="Permalink to this headline">¶</a> -->
                 </h1>
                 <div class="toctree-wrapper compound">
                     <ul>

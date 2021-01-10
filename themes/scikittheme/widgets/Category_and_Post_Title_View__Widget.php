@@ -94,7 +94,7 @@ class Category_and_Post_Title_View__Widget extends WP_Widget {
 								//$curent_cats = get_the_category();
 								//$current_category_id = $curent_cats[0]->cat_ID;
 								
-								$post_id = get_the_ID();								
+								$post_id = get_the_ID();
 								$current_category_id = get_the_terms( $post_id, $taxanomy_name )[0]->term_id;
 
 

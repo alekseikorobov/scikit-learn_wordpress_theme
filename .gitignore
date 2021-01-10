@@ -5,3 +5,8 @@ plugins/classic-editor
 plugins/hello.php
 plugins/index.php
 plugins/taxonomy-terms-order
+plugins/mathjax-latex
+plugins/simple-mathjax
+plugins/*
+Images/*
+uploads/*

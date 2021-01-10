@@ -52,11 +52,11 @@ get_header();
             <div class="section" id="supervised-learning">
                 <span id="id1"></span>
                 <h1>
-                    From Category
-                </h1>
-                <h1>
-                <span class="section-number">1. </span>Supervised learning<a class="headerlink"
-                    href="#supervised-learning" title="Permalink to this headline">¶</a>
+                <?php
+                    $curent_cats = get_the_category();
+                    echo $current_category_name = $curent_cats[0]->name;
+                ?>
+                
                 </h1>
                 <div class="toctree-wrapper compound">
                     <ul>
