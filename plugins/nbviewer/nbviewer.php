@@ -1,4 +1,8 @@
 <?php
+/*
+ * Plugin Name: nbviewer
+ * Description: view jupyter notebook from ipynb file
+ */
 
 function nbviewer_handler($atts) {
   //run function that actually does the work of the plugin
