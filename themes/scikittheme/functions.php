@@ -5,7 +5,7 @@
 
     /*init actions and filters*/
     add_action ('init','register_post_types');
-    add_action( 'init', 'register_taxonomies' );
+    add_action( 'init', 'register_taxonomies' ); 
     add_action('wp_enqueue_scripts','style_theme');
     add_action('wp_footer','scripts_theme');
     add_action( 'after_setup_theme', 'theme_register_nav_menu' );
@@ -20,7 +20,7 @@
     remove_filter( 'the_excerpt', 'wpautop' );// для анонсов
     remove_filter( 'comment_text', 'wpautop' );// для комментарий
 
-
+    
     function register_post_types() {
         register_post_type( 'example', [
             'label'  => null,
@@ -127,6 +127,8 @@
         register_nav_menu( 'primary', 'Primary Menu' );
         add_post_type_support( 'page', 'excerpt' );
         add_post_type_support( 'post', 'post_excerpt' );
+        add_theme_support( 'post-thumbnails' ); // для всех типов постов
+        add_theme_support( 'title-tag' ); // автоматическая подстановка title
     }
 
 

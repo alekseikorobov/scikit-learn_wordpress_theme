@@ -27,66 +27,75 @@ get_header();
     <div id="sk-page-content-wrapper">
         <div class="sk-page-content container-fluid body px-md-3" role="main">
 
-            <style type="text/css">
-                div.body div.toctree-wrapper ul {
-                    padding-left: 0;
-                }
-
-                div.body li.toctree-l1 {
-                    padding: 0 0 0.5em 0;
-                    list-style-type: none;
-                    font-size: 150%;
-                    font-weight: bold;
-                }
-
-                div.body li.toctree-l2 {
-                    font-size: 70%;
-                    list-style-type: square;
-                    font-weight: normal;
-                    margin-left: 40px;
-                }
-
-                div.body li.toctree-l3 {
-                    font-size: 85%;
-                    list-style-type: circle;
-                    font-weight: normal;
-                    margin-left: 40px;
-                }
-
-                div.body li.toctree-l4 {
-                    margin-left: 40px;
-                }
-            </style>
-            <div class="section" id="supervised-learning">
+            <div class="section" id="example">
                 <span id="id1"></span>
-                <h1>Example</h1>
-                <div class="toctree-wrapper compound">
-                    <ul>
+                <h1>Примеры</h1>
+                
+                    <div class="sphx-glr-clear"></div>
                     <?php
-                        $args = array(
-                            'post_type'=>'example',
-                            'suppress_filters'=>true // подавление работы фильтров изменения SQL запросов
-                        );
-                        $posts = get_posts($args);
+                        $terms = get_terms('category_example');
+                        
+                        foreach ($terms as $term) {
+                        ?>
+                            <h2><?php echo $term->name ?></h2>
+                            <p><?php echo $term->description?></p>
+                            
+                        <?php 
 
-                        foreach ($posts as $post) {
-                            setup_postdata($post);
+                            $args = array(
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category_example',
+                                        'field'    => 'slug',
+                                        'terms'    => $term->slug
+                                    )
+                                )
+                            );
+                            
+                            // Запрос. $args - параметры запроса
+                            query_posts( $args );
 
+                            // Цикл WordPress
+                            if( have_posts() ){ 
+                                while( have_posts() ){ 
+                                    the_post();
+
+                                    ?>
+
+                            <div class="sphx-glr-thumbcontainer">
+                                <div class="figure align-default" id="id2">
+                                    <!-- <img alt="<?php the_title();?>" src="../_images/sphx_glr_plot_release_highlights_0_23_0_thumb.png"> -->
+                                    <?php the_post_thumbnail(array(160,112))?>
+                                    <p class="caption">
+                                        <span class="caption-text">
+                                            <a class="reference internal" href="<?php the_permalink()?>">
+                                            <span class="std std-ref"><?php the_title();?></span>
+                                            </a>
+                                            </span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a>
+                                            </p>
+                                </div>
+                            </div>
+                            <div class="toctree-wrapper compound">
+                            </div>
+
+                                    <?php
+
+                                    
+                                }
+                                wp_reset_query();
+                            }
+                            //wp_reset_postdata();
+                            // else {
+                            // // текст/код, если постов нет
+                            // }
                             ?>
-                                <li class="toctree-l1"><a class="reference internal" href="<?php the_permalink();?>">
-                                    <!-- 1.1.Linear Models -->
-                                    <?php the_title(); ?>
-                                    <ul>
-                                        <?php echo get_the_excerpt(); ?>
-                                    </ul>
-                                </a>
+                            
+                            
 
-                            <?php
-
+                            <div class="sphx-glr-clear"></div>
+                        <?php 
                         }
-                    ?>                    
-                    </ul>
-                </div><!--  END toctree-wrapper compound -->
+                    ?>
             </div>
         </div>
         <div class="container">
