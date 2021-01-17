@@ -7,6 +7,8 @@ plugins/index.php
 plugins/taxonomy-terms-order
 plugins/mathjax-latex
 plugins/simple-mathjax
-plugins/*
+plugins/crayon-syntax-highlighter
+plugins/wp-add-mime-types
+plugins/wp-codemirror-block
 Images/*
 uploads/*

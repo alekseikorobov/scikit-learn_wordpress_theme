@@ -1,0 +1,12 @@
+
+.input_area{
+	display: flex;
+}
+
+.rendered_html p {
+    margin: 5px 0px 5px 0px;
+}
+
+.prompt.input_prompt {
+    display: none;
+}

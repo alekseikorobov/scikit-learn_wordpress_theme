@@ -19,8 +19,32 @@
     remove_filter( 'the_content', 'wpautop' );// для контента
     remove_filter( 'the_excerpt', 'wpautop' );// для анонсов
     remove_filter( 'comment_text', 'wpautop' );// для комментарий
+    add_filter( 'upload_mimes', 'upload_allow_types' ); //для разрешение загрузки своих файлов в медиатеку
 
+
+    function upload_allow_types( $mimes ) {
+
+        // разрешаем новые типы
+        //$mimes['ipynb']  = 'application/json'; 
+        //$mimes['ipynb']  = 'application/ipynb'; 
+        $mimes['json']  = 'application/json'; 
+
+        
+        //$mimes['woff'] = 'font/woff';
+        // $mimes['psd']  = 'image/vnd.adobe.photoshop'; 
+        // $mimes['djv']  = 'image/vnd.djvu';
+        // $mimes['djvu'] = 'image/vnd.djvu';
+        // $mimes['webp'] = 'image/webp';
+        //$mimes['fb2']  = 'text/xml'; 
+        //$mimes['epub'] = 'application/epub+zip'; 
     
+        // запрещаем (отключаем) имеющиеся
+        // unset( $mimes['mp4a'] );
+    
+        return $mimes;
+    }
+
+
     function register_post_types() {
         register_post_type( 'example', [
             'label'  => null,
