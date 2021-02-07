@@ -8,7 +8,6 @@
   <meta name="Description" content="scikit-learn: machine learning in Python">
 
   
-  <title>scikit-learn: machine learning in Python &mdash; scikit-learn 0.23.2 documentation</title>
   
   <!-- <link rel="canonical" href="https://scikit-learn.org/stable/index.html" /> -->
   <link rel="canonical" href="<?php echo home_url();?>" />
