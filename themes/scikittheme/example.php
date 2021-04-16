@@ -49,7 +49,8 @@ get_header();
                                         'field'    => 'slug',
                                         'terms'    => $term->slug
                                     )
-                                )
+                                ),
+                                'posts_per_page' => -1
                             );
                             
                             // Запрос. $args - параметры запроса
