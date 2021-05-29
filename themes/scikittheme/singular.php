@@ -13,10 +13,7 @@ get_header();
     <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle
         Menu</label>
     
-        <?php  get_sidebar('post'); ?>
-
-        
-        
+        <?php  get_sidebar('post'); ?>        
 
     <div id="sk-page-content-wrapper">
         <div class="sk-page-content container-fluid body px-md-3" role="main">
@@ -57,18 +54,17 @@ get_header();
                 <span class="section-number"><?php the_title()?> <a class="headerlink"
                     href="#supervised-learning" title="Permalink to this headline">¶</a>
                 </h1>
-                <!-- <h1></h1> -->
-
                 <?php the_content();?>
             </div>
 
 
-        </div>
+        </div>        
         <div class="container">
             <footer class="sk-content-footer">
-                © 2007 - 2020, scikit-learn developers (BSD License).
-                <a href="_sources/supervised_learning.rst.txt" rel="nofollow">Show this page source</a>
-            </footer>
+            Если вы хотите помочь проекту с переводом, то можно обращаться по следующему адресу <a href="mailto:support@scikit-learn.ru">support@scikit-learn.ru</a>
+            <br/>
+                © 2007 - 2020, scikit-learn developers (BSD License).                
+            </footer>        
         </div>
     </div>
 </div>
