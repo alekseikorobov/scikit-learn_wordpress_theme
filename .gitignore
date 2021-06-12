@@ -13,3 +13,4 @@ plugins/wp-add-mime-types
 plugins/wp-codemirror-block
 Images/*
 uploads/*
+node_modules
