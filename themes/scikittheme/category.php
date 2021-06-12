@@ -84,9 +84,10 @@ get_header();
         </div>
         <div class="container">
             <footer class="sk-content-footer">
-                © 2007 - 2020, scikit-learn developers (BSD License).
-                <a href="_sources/supervised_learning.rst.txt" rel="nofollow">Show this page source</a>
-            </footer>
+            Если вы хотите помочь проекту с переводом, то можно обращаться по следующему адресу <a href="mailto:support@scikit-learn.ru">support@scikit-learn.ru</a>
+            <br/>
+                © 2007 - 2020, scikit-learn developers (BSD License).                
+            </footer>        
         </div>
     </div>
 </div>

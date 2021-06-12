@@ -14,3 +14,4 @@ plugins/wp-codemirror-block
 Images/*
 uploads/*
 node_modules
+languages/*
