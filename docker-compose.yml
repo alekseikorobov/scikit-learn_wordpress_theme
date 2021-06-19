@@ -13,6 +13,7 @@ services:
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
+      WORDPRESS_TABLE_PREFIX: wptl_
       # WP_DEBUG=true
       # WP_DEBUG_DISPLAY=false
       # WP_DEBUG_LOG=true 
@@ -35,6 +36,20 @@ services:
       - db:/var/lib/mysql
     networks:
       - sklearn
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: examplepass 
+      UPLOAD_LIMIT: 300M
+    networks:
+      - sklearn
 
 networks:
   sklearn:
@@ -43,3 +58,7 @@ networks:
 volumes:
   db:
     driver: local
+    
+#sudo docker-compose up -d
+#with clear data:  sudo docker-compose down --volumes
+#with only down:  sudo docker-compose down
