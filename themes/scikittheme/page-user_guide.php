@@ -197,7 +197,7 @@ get_header();
 
                             function get_html_posts_by_category_id($category_id){
                                 global $post;
-                                $args = array('category' => $category_id);
+                                $args = array('category' => $category_id, 'posts_per_page' => -1);
                                 $posts = get_posts($args);
 
                                 foreach( $posts as $post ){ 
