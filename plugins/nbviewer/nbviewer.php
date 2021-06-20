@@ -11,6 +11,27 @@ function nbviewer_handler($atts) {
   return $nb_output;
 }
 
+function get_or_download_html($clean_url){
+
+  $html = '';
+
+  if (!file_exists('nbviewer')) {
+      mkdir('nbviewer', 0777, true);
+  }
+  
+  $nnn = str_replace("/","_",$clean_url);
+  $my_file = 'nbviewer/'.$nnn;
+  if(file_exists($my_file)){
+      //читаем
+      $html = file_get_contents($my_file);
+  } else {
+      //записываем
+      $html = file_get_contents("https://nbviewer.jupyter.org/url/" . $clean_url);
+      file_put_contents($my_file, $html);
+  }
+  return $html;
+}
+
 function nbviewer_function($atts) {
   //process plugin
   extract(shortcode_atts(array(
@@ -18,7 +39,7 @@ function nbviewer_function($atts) {
      ), $atts));
 
   $clean_url = preg_replace('#^https?://#', '', rtrim($url,'/'));
-  $html = file_get_contents("https://nbviewer.jupyter.org/url/" . $clean_url);
+  $html = get_or_download_html($clean_url);
   $nb_output = nbviewer_getHTMLByID('notebook-container', $html);
 
 
