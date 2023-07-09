@@ -133,10 +133,16 @@
       </ul> -->
       <div id="searchbox" role="search">
           <div class="searchformwrapper">
-          <form class="search" action="search.html" method="get">
-            <input class="sk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
-            <input class="sk-search-text-btn" type="submit" value="Go" />
-          </form>
+            <script type="text/javascript">				
+              function submit_form(){
+                var text = document.getElementById('search').value;
+                window.open('https://www.google.com/search?q='+text+'+site%3Ascikit-learn.ru','_blank');
+              }
+            </script> 
+            <form class="search" onsubmit="submit_form(); return false;" >
+              <input class="sk-search-text-input" type="text" aria-labelledby="searchlabel" id="search" />
+              <input class="sk-search-text-btn" type="submit" value="Go" />
+            </form>
           </div>
       </div>
     </div>
