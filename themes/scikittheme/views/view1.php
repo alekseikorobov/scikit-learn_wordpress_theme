@@ -7,9 +7,10 @@ function header_content(){
             <div class="col-md-6 mb-3 mb-md-0">
                 <h1 class="sk-landing-header text-white text-monospace">scikit-learn</h1>
                 <h4 class="sk-landing-subheader text-white font-italic mb-3">Машинное обучение в Python</h4>
-                <a class="btn sk-landing-btn mb-1" href="getting_started.html" role="button">Быстрый старт</a>
+                <a class="btn sk-landing-btn mb-1" href="https://scikit-learn.ru/getting_started/" role="button">Быстрый старт</a>
                 <a class="btn sk-landing-btn mb-1" href="https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_0_24_0.html" role="button">Релиз с официального сайта</a>
                 <a class="btn sk-landing-btn mb-1" href="https://github.com/scikit-learn/scikit-learn" role="button">GitHub</a>
+                <a class="btn sk-landing-btn mb-1" href="https://pay.cloudtips.ru/p/0eb4d52b" role="button">Donat</a>                
             </div>
             <div class="col-md-6 d-flex">
                 <ul class="sk-landing-header-body">

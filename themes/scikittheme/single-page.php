@@ -1,8 +1,18 @@
 <?php
+/*
+Template Name: page for page
+Template Post Type: page
+*/
+?>
+
+
+<?php
 get_header();
 
 ?>
 <?php
+    //темплейт для прочих страниц, которые должны быть не в категории и не примеры.
+    //например такая страница как Быстрый старт
     //header_content()
 ?>
 
@@ -10,10 +20,10 @@ get_header();
 
 <div class="d-flex" id="sk-doc-wrapper">
     <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
-    <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
+    <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle
+        Menu</label>
     
-        <?php  get_sidebar(); ?>
-
+        <?php  get_sidebar('post'); ?>        
 
     <div id="sk-page-content-wrapper">
         <div class="sk-page-content container-fluid body px-md-3" role="main">
@@ -51,36 +61,14 @@ get_header();
             <div class="section" id="supervised-learning">
                 <span id="id1"></span>
                 <h1>
-                <?php
-                    $curent_cats = get_the_category();
-                    echo $current_category_name = $curent_cats[0]->name;
-                ?>
-                
+                <span class="section-number"><?php the_title()?> <a class="headerlink"
+                    href="#supervised-learning" title="Permalink to this headline">¶</a>
                 </h1>
-                <div class="toctree-wrapper compound">
-                    <ul>
-                    <?php
-                        if (have_posts()){
-                            while(have_posts()){
-                                the_post();
-                                ?>
-                                <li class="toctree-l1"><a class="reference internal" href="<?php the_permalink();?>">
-                                    <!-- 1.1.Linear Models -->
-                                    <?php the_title(); ?>
-                                    <ul>
-                                        <?php echo get_the_excerpt(); ?>
-                                    </ul>
-                                </a>
-
-                            <?php } //end while
-                        }//end if
-                    ?>                    
-                    </ul>
-                </div><!--  END toctree-wrapper compound -->
+                <?php the_content();?>
             </div>
 
-            
-        </div>
+
+        </div>        
         <div class="container">
             <footer class="sk-content-footer">
             Если вы хотите помочь проекту с переводом, то можно обращаться по следующему адресу <a href="mailto:support@scikit-learn.ru">support@scikit-learn.ru</a>

@@ -7,6 +7,7 @@ get_header();
 ?>
 <?php
     //header_content()
+    //название файла соответствует странице user_guide, поэтому при переходе на страницу  domain/user_guide/ будет отображена именно эта страница!!!!
 ?>
 
 <div class="d-flex" id="sk-doc-wrapper">
